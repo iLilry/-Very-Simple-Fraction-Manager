@@ -12,4 +12,4 @@ The manager will give u like 9 options <br>
   7 for fraction division  <br>
 and 8 for fraction array )  <br>
 I also added a special checker to force users to type a number instead of texts or symbols by using scanf and getchar() <br>
-If users type texts or symbols it will catch the error ,reset and force them to type a valid number, no infinite loops here (i think 😂) :3
+If users type texts or symbols it will reset and force them to type a valid number, no infinite loops here (i think 😂) :3
