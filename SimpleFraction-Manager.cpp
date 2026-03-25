@@ -33,13 +33,13 @@ void input(PHANSO &ps)
 
 void output(PHANSO ps)
 {
-    printf("%d/%d",ps.tu,ps.mau);
+    printf("%d/%d\n",ps.tu,ps.mau);
 }
 
 
 
 void menu()
-{
+{   printf("MENU:");
     printf("\n1. Nhap phan so");
     printf("\n2. Xuat phan so");
     printf("\n3. Rut gon phan so");
@@ -121,7 +121,6 @@ void nhapmang(PHANSO p[],int &n)
         {
             printf("Phan so thu [%d] la: ",i+1);
             output(p[i]);
-            printf("\n");
         }
     }
 
@@ -145,40 +144,45 @@ int main()
     
         switch(chon)
         {
-            case 1 : input(ps); break;
+            case 1 : input(ps);
+                     menu(); break;
             case 2 : printf("Phan so vua nhap la: ");
-                     output(ps); break;
+                     output(ps);
+                     menu(); break;
             case 3 : rutgonphanso(ps);
-                     printf("Phan so sau khi rut gon: "); output(ps); break;
+                     printf("Phan so sau khi rut gon: "); output(ps);
+                     menu(); break;
             case 4 : printf("Nhap phan so thu 1: "); input(ps1);
                      printf("\nNhap phan so thu 2: ");input(ps2);
                      printf("\nTong cua 2 phan so la: ");
                      ps = tongphanso(ps1,ps2);
-                     output(ps); break;
+                     output(ps);
+                     menu(); break;
             case 5 : printf("Nhap phan so thu 1: "); input(ps1);
                      printf("\nNhap phan so thu 2: "); input(ps2);
                      printf("\nHieu cua 2 phan so la:  ");
                      ps = hieuphanso(ps1,ps2);
-                     output(ps); break;
+                     output(ps);
+                     menu(); break;
             case 6:  printf("Nhap phan so thu 1: "); input(ps1);
                      printf("\nNhap phan so thu 2: "); input(ps2);
                      printf("\nTich cua 2 phan so la:  ");
                      ps = tichphanso(ps1,ps2);
-                     output(ps); break;
+                     output(ps);
+                     menu(); break;
             case 7:  printf("Nhap phan so thu 1: "); input(ps1);
                      printf("\nNhap phan so thu 2: "); input(ps2);
                      printf("\nThuong cua 2 phan so la:  ");
                      ps = thuongphanso(ps1,ps2);
-                     output(ps); break;
+                     output(ps);
+                     menu(); break;
             case 8:  nhapmang(p,n);
                      xuatmang(p,n);
+                     menu();
                      break;
             case 0: printf("ok!"); break;
-            default: printf("Error~"); 
+            default: printf("Error~There no such option."); 
 
         }
     }while(chon!=0);
 }
-
-
-
